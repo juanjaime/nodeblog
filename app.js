@@ -27,13 +27,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+//Session middleware
 app.use(session({
   secret:'secret',
   saveUninitialized:true,
   resave:true
 }));
-
+//expressValidator Middleware
 app.use(expressValidator({
   errorFormatter: function (param, msg, value) {
     var namespace = param.split('.')
@@ -49,6 +49,7 @@ app.use(expressValidator({
     };
   }
 }));
+//Connect-Flash middleware
 app.use(require('connect-flash')());
 app.use(function (req, res, next) {
   res.locals.messages = require('express-messages')(req, res);
@@ -57,7 +58,6 @@ app.use(function (req, res, next) {
 app.use(function (req,res,next) {
  req.db =db;
   next()
-
 });
 app.use('/', routes);
 app.use('/users', users);
