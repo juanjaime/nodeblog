@@ -61,16 +61,53 @@ a {
 }
 a.more{
   display: block;
-  width: 80px;
+  width: 85px;
   background: #404137;
   color: #ffffff;
   padding: 10px;
   margin-top: 30px;
-
+  text-decoration: none;
 }
-post
+.post
 {
   border-bottom: 1px solid #cccccc;
   padding-bottom: 20px;
   text-decoration: none;
+}
+.post h1 a
+{
+  color: #666666;
+  text-decoration: none;
+}
+input, select, textarea
+{
+  margin-bottom: 15px;
+}
+label
+{
+  display: inline-block;
+  width: 180px;
+}
+input[type='text'], select, textarea{
+  padding: 3px;
+  height: 20px;
+  width: 200px;
+  border: 1px #cccccc solid;
+}
+select{
+  height: 28px;
+}
+textarea{
+  height: 70px;
+  width: 400px;
+}
+ul.success li{
+  padding: 15px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #3c763d;
+  background-color: #d6e9c6;
+  list-style: none;
 }
